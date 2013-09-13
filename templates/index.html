@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>DevFest Akure To-Do List App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../statics/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../statics/css/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../statics/js/html5shiv.js"></script>
+    <script src="../statics/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">DevFest To-Do app</h3>
+    </div>
+
+    <div class="jumbotron">
+        <h1>To-Do List App</h1>
+
+        <p class="lead">This basic To-Do list app is to demonstrate the use of an appengine backend to support Mobile
+            and web clients</p>
+
+        {% if user_id == None%}
+        <p><a class="btn btn-lg btn-success" href="{{login_url}}" id=>Sign In With Google</a></p>
+        {% else %}
+        <p> Welcome<a href="{{logout_url}}"> {{ name }} </a> </p>
+        {% endif %}
+    </div>
+
+    {% block content %}
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <h4>AppEngine</h4>
+
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="../statics/img/appengine.jpg" alt="">
+                </a>
+                <div class="media-body">
+                    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                </div>
+            </div>
+
+            <h4>Boostrap</h4>
+
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+        <div class="col-lg-6">
+             <h4>HTML5</h4>
+
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="../statics/img/HTML5.png" alt="">
+                </a>
+                <div class="media-body">
+                    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                </div>
+            </div>
+            <h4>Android</h4>
+
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="../statics/img/android.png" alt="">
+                </a>
+
+                <div class="media-body">
+                    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+    <div class="footer">
+        <p>&copy; GDG Akure 2013</p>
+    </div>
+
+</div>
+<!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>
